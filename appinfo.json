@@ -1,0 +1,10 @@
+{
+		"name": "i2b2box",
+		"short_name": "i2b2box",
+		"version": "V.1.0",
+		"description": "lightweight deployment of i2b2 hive",
+        "short_description": "lightweight deployment of i2b2 hive",
+		"catalogue_url": "",
+		"application_url": "https://www.i2b2.org/",
+		"tags": ["Medical Record Systems", "Study cohort identification"]
+}

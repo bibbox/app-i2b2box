@@ -1,0 +1,4 @@
+{
+  runningcontainers:["§§INSTANCE-db", "§§INSTANCE-i2b2-server","§§INSTANCE-i2b2-www"],
+  supportcontainers:["§§INSTANCE-db-data"]    
+}
