@@ -1,6 +1,6 @@
 {
     "makefolders":[
-        "var/lib/postgresql/data",
+        "var/lib/postgresql/data"
     ],
     "copyfiles":[
     ]
