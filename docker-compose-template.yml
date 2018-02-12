@@ -6,7 +6,7 @@ networks:
 
 services:
   §§INSTANCE-db:
-    image: crs4/i2b2-postgres-db
+    image: crs4/i2b2-postgres-db:1.0
     container_name: §§INSTANCE-db
     restart: unless-stopped
     environment:
