@@ -20,7 +20,9 @@ services:
     depends_on:
       - §§INSTANCE-db-data
     networks:
-      - bibbox-default-network
+      bibbox-default-network:
+          aliases:
+           - db
 
   §§INSTANCE-i2b2-server:
     image: crs4/i2b2-server:1708b
@@ -35,18 +37,25 @@ services:
       - "§§PORT2:9990"
       - "§§PORT3:9009"
       - "§§PORT4:8080"
-    links:
+    depends_on:
       - §§INSTANCE-db
     networks:
-      - bibbox-default-network
+       bibbox-default-network:
+         aliases:
+          - i2b2-server
 
   §§INSTANCE-i2b2-www:
     image: crs4/i2b2-www
     container_name: §§INSTANCE-i2b2-www
     ports:
       - "§§PORT:80"
+    depends_on:
+      - §§INSTANCE-i2b2-server
     networks:
-      - bibbox-default-network
+       bibbox-default-network:
+          aliases:
+             - i2b2-www
+
 
   §§INSTANCE-db-data:
     image: busybox
