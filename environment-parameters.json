@@ -1,11 +1,2 @@
 [
-   {
-      "id":"POSTGRES_PASSWORD",
-      "display_name":"Postgres Password",
-      "type":"text",
-      "default_value":"postgres",
-      "description":"Password for postgres db",
-      "min_length": "1",
-      "max_length": "128"
-   }
 ]

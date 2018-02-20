@@ -45,7 +45,7 @@ services:
           - i2b2-server
 
   §§INSTANCE-i2b2-www:
-    image: crs4/i2b2-www
+    image: crs4/i2b2-www:1.0
     container_name: §§INSTANCE-i2b2-www
     ports:
       - "§§PORT:80"
