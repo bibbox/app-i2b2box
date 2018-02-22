@@ -33,10 +33,10 @@ services:
       i2b2_VERSION_SHORT: 1708b
       i2b2_VERSION: 1.7.8b
     ports:
-      - "§§PORT1:9090"
-      - "§§PORT2:9990"
-      - "§§PORT3:9009"
-      - "§§PORT4:8080"
+      - "§§PORTA:9090"
+      - "§§PORTB:9990"
+      - "§§PORTC:9009"
+      - "§§PORTD:8080"
     depends_on:
       - §§INSTANCE-db
     networks:
