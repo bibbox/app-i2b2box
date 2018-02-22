@@ -5,6 +5,7 @@ networks:
       external: true
 
 services:
+
   §§INSTANCE-db:
     image: crs4/i2b2-postgres-db:1.0
     container_name: §§INSTANCE-db
@@ -13,8 +14,6 @@ services:
        POSTGRES_USER: postgres
        POSTGRES_PASSWORD: postgres
        POSTGRES_DB: i2b2
-    ports:
-      - "5442:5432"
     volumes_from: 
       - §§INSTANCE-db-data
     depends_on:
@@ -33,10 +32,10 @@ services:
       i2b2_VERSION_SHORT: 1708b
       i2b2_VERSION: 1.7.8b
     ports:
-      - "§§PORTA:9090"
-      - "§§PORTB:9990"
-      - "§§PORTC:9009"
-      - "§§PORTD:8080"
+      - "§§APORT:9090"
+      - "§§BPORT:9990"
+      - "§§CPORT:9009"
+      - "§§DPORT:8080"
     depends_on:
       - §§INSTANCE-db
     networks:
