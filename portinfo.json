@@ -1,26 +1,26 @@
 {
   "mappings": [
     {
-      "id": "§§PORT1",
-      "url": "§§INSTANCE-server",
+      "id": "§§PORTA",
+      "url": "§§INSTANCE-server-a",
       "protocol": "HTTP",
       "proxy" : "PRIMARY"
     },
     {
-      "id": "§§PORT2",
-      "url": "§§INSTANCE-server",
+      "id": "§§PORTB",
+      "url": "§§INSTANCE-server-b",
       "protocol": "HTTP",
       "proxy" : "PRIMARY"
     },
     {
-      "id": "§§PORT3",
-      "url": "§§INSTANCE-server",
+      "id": "§§PORTC",
+      "url": "§§INSTANCE-server-c",
       "protocol": "HTTP",
       "proxy" : "PRIMARY"
     },
     {
-      "id": "§§PORT4",
-      "url": "§§INSTANCE-server",
+      "id": "§§PORTD",
+      "url": "§§INSTANCE-server-d",
       "protocol": "HTTP",
       "proxy" : "PRIMARY"
     },
