@@ -3,5 +3,6 @@
         "var/lib/postgresql/data"
     ],
     "copyfiles":[
+    "i2b2postgresdb","i2b2server","i2b2www"
     ]
 }
