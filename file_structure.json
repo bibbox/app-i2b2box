@@ -3,6 +3,17 @@
         "var/lib/postgresql/data"
     ],
     "copyfiles":[
-    "i2b2postgresdb","i2b2server","i2b2www"
+    {
+     "source":"i2b2postgresdb",
+     "destination":"i2b2postgresdb"
+    },
+    {
+     "source":"i2b2server",
+     "destination":"i2b2server"
+    },
+    {
+     "source":"i2b2www",
+     "destination":"i2b2www"
+    }
     ]
 }
