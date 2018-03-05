@@ -1,0 +1,16 @@
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2imdata
+  passwd: demouser
+data:
+  files:
+    root: /myresources/IMD
+    path:
+      - ./im_create_tables_postgresql.sql
+      - ./im_mpi_demographics_insert_data.sql
+      - ./im_mpi_mapping_insert_data.sql
+      - ./im_project_patients_insert_data.sql
+      - ./im_project_sites_insert_data.sql
+      

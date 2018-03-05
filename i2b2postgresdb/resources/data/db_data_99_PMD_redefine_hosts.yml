@@ -1,0 +1,29 @@
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2pm
+  passwd: demouser
+data:
+  cmd:
+    - "UPDATE PM_CELL_DATA \
+       SET URL = 'http://i2b2-server:9090/i2b2/services/QueryToolService/' \
+       WHERE CELL_ID = 'CRC' \
+       AND URL = 'http://localhost:9090/i2b2/services/QueryToolService/'"
+    - "UPDATE PM_CELL_DATA \
+       SET URL = 'http://i2b2-server:9090/i2b2/services/FRService/' \
+       WHERE CELL_ID = 'FRC' \
+       AND URL = 'http://localhost:9090/i2b2/services/FRService/'"
+    - "UPDATE PM_CELL_DATA \
+       SET URL = 'http://i2b2-server:9090/i2b2/services/OntologyService/' \
+       WHERE CELL_ID = 'ONT' \
+       AND URL = 'http://localhost:9090/i2b2/services/OntologyService/'"
+    - "UPDATE PM_CELL_DATA \
+       SET URL = 'http://i2b2-server:9090/i2b2/services/WorkplaceService/' \
+       WHERE CELL_ID = 'WORK' \
+       AND URL = 'http://localhost:9090/i2b2/services/WorkplaceService/'"
+    - "UPDATE PM_CELL_DATA \
+       SET URL = 'http://i2b2-server:9090/i2b2/services/IMService/' \
+       WHERE CELL_ID = 'IM' \
+       AND URL = 'http://localhost:9090/i2b2/services/IMService/'"
+    

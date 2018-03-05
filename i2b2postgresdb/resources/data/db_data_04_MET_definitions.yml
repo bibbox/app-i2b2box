@@ -1,0 +1,12 @@
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2metadata
+  passwd: demouser
+data:
+  files:
+    root: /myresources/MET
+    path:
+      - ./create_postgresql_i2b2metadata_tables.sql
+

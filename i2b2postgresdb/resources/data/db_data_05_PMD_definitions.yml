@@ -1,0 +1,18 @@
+# The PM scripts assume that the i2b2 cells are running on port 9090; if they are
+# not you will need to modify the Cells URL in the admin tool or modify the
+# PM_CELL_PARAMS records.
+
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2pm
+  passwd: demouser
+data:
+  files:
+    root: /myresources/PMD
+    path:
+      - ./create_postgresql_i2b2pm_tables.sql
+      - ./create_postgresql_triggers.sql
+      - ./pm_access_insert_data.sql
+

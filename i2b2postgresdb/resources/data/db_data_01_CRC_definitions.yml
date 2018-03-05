@@ -1,0 +1,35 @@
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2demodata
+  passwd: demouser
+data:
+  files:
+    root: /myresources/CRC
+    path:
+      - ./crc_create_datamart_postgresql.sql
+      - ./crc_create_query_postgresql.sql
+      - ./crc_create_uploader_postgresql.sql
+      - ./CREATE_TEMP_CONCEPT_TABLE.sql
+      - ./CREATE_TEMP_PATIENT_TABLE.sql
+      - ./CREATE_TEMP_PID_TABLE.sql
+      - ./CREATE_TEMP_EID_TABLE.sql
+      - ./CREATE_TEMP_PROVIDER_TABLE.sql
+      - ./CREATE_TEMP_TABLE.sql
+      - ./CREATE_TEMP_VISIT_TABLE.sql
+      - ./INSERT_CONCEPT_FROMTEMP.sql
+      - ./INSERT_ENCOUNTERVISIT_FROMTEMP.sql
+      - ./INSERT_PATIENT_MAP_FROMTEMP.sql
+      - ./INSERT_PATIENT_FROMTEMP.sql
+      - ./INSERT_PID_MAP_FROMTEMP.sql
+      - ./INSERT_EID_MAP_FROMTEMP.sql
+      - ./INSERT_PROVIDER_FROMTEMP.sql
+      - ./REMOVE_TEMP_TABLE.sql
+      - ./UPDATE_OBSERVATION_FACT.sql
+      - ./SYNC_CLEAR_CONCEPT_TABLE.sql
+      - ./SYNC_CLEAR_PROVIDER_TABLE.sql
+      - ./UPDATE_QUERYINSTANCE_MESSAGE.sql
+      - ./CREATE_TEMP_MODIFIER_TABLE.sql
+      - ./INSERT_MODIFIER_FROMTEMP.sql
+      - ./SYNC_CLEAR_MODIFIER_TABLE.sql

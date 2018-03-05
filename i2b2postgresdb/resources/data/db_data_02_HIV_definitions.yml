@@ -1,0 +1,15 @@
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2hive
+  passwd: demouser
+data:
+  files:
+    root: /myresources/HIV
+    path:
+      - ./create_postgresql_i2b2hive_tables.sql
+      - ./work_db_lookup_postgresql_insert_data.sql
+      - ./ont_db_lookup_postgresql_insert_data.sql
+      - ./crc_db_lookup_postgresql_insert_data.sql
+      - ./im_db_lookup_postgresql_insert_data.sql

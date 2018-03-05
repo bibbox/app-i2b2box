@@ -7,30 +7,38 @@ networks:
 services:
 
   §§INSTANCE-db:
-    image: crs4/i2b2-postgres-db:1.0
     container_name: §§INSTANCE-db
     restart: unless-stopped
     environment:
        POSTGRES_USER: postgres
        POSTGRES_PASSWORD: postgres
        POSTGRES_DB: i2b2
+    build:
+       context: ./i2b2postgresdb
+       dockerfile: Dockerfile
+       args:
+           I2B2NODE: §§INSTANCE-i2b2-server
     volumes_from: 
       - §§INSTANCE-db-data
     depends_on:
       - §§INSTANCE-db-data
     networks:
       bibbox-default-network:
-          aliases:
-           - db
+
 
   §§INSTANCE-i2b2-server:
-    image: crs4/i2b2-server:1708b
     container_name: §§INSTANCE-i2b2-server
     restart: unless-stopped
     environment:
       JBOSS_IMAGE: crs4/jboss_wildfly:10.0.0.Final
       i2b2_VERSION_SHORT: 1708b
       i2b2_VERSION: 1.7.8b
+    build:
+       context: ./i2b2server
+       dockerfile: Dockerfile
+       args:
+           I2B2NODE: §§INSTANCE-i2b2-server
+           DBNODE: §§INSTANCE-db
     ports:
       - "§§APORT:9090"
       - "§§BPORT:9990"
@@ -40,20 +48,22 @@ services:
       - §§INSTANCE-db
     networks:
        bibbox-default-network:
-         aliases:
-          - i2b2-server
+
 
   §§INSTANCE-i2b2-www:
     image: crs4/i2b2-www:1.0
     container_name: §§INSTANCE-i2b2-www
     ports:
       - "§§PORT:80"
+    build:
+       context: ./i2b2www
+       dockerfile: Dockerfile
+       args:
+          I2B2NODE: §§INSTANCE-i2b2-server
     depends_on:
       - §§INSTANCE-i2b2-server
     networks:
        bibbox-default-network:
-          aliases:
-             - i2b2-www
 
 
   §§INSTANCE-db-data:

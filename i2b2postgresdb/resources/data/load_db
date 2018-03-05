@@ -1,0 +1,44 @@
+#!/usr/bin/python
+
+import sys
+import os
+import psycopg2 as psyco
+import yaml
+
+
+def load_files(conn, files):
+    for f in files:
+        with conn:
+            print('processing file {}.'.format(f))
+            cmd = open(f).read().strip()
+            if len(cmd) > 0:
+                with conn.cursor() as c:
+                    c.execute(cmd)
+
+
+def execute_cmds(conn, cmds):
+    for cmd in cmds:
+        with conn:
+            with conn.cursor() as c:
+                c.execute(cmd)
+
+
+def load_dataset(dataset):
+    host = dataset['dbserver']['host']
+    dbname = dataset['dbserver']['dbname']
+    db_user = dataset['dbserver']['user']
+    db_passwd = dataset['dbserver']['passwd']
+    data = dataset['data']
+    conn = psyco.connect(host=host, dbname=dbname,
+                         user=db_user, password=db_passwd)
+    if 'cmd' in data:
+        execute_cmds(conn, data['cmd'])
+    if 'files' in data:
+        root = data['files']['root']
+        files = [os.path.join(root, p) for p in data['files']['path']]
+        load_files(conn, files)
+
+
+if __name__ == '__main__':
+    dataset = yaml.load(open(sys.argv[1]))
+    load_dataset(dataset)

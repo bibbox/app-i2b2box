@@ -1,0 +1,13 @@
+version: 0.0
+dbserver:
+  host: localhost
+  dbname: i2b2
+  user: i2b2workdata
+  passwd: demouser
+data:
+  files:
+    root: /myresources/WKD
+    path:
+      - ./create_postgresql_i2b2workdata_tables.sql
+      - ./workplace_access_demo_insert_data.sql
+
