@@ -3,9 +3,9 @@
 #To run: docker run --name=foorun -p 8080:8080 -p 9090:9090 -p 9990:9990 -p 9009:9009  i2b2-server
 #To verify installation: load http://localhost:8080/i2b2/services/listServices
 
-ARG JBOSS_IMAGE=crs4/jboss_wildfly:10.0.0.Final
+#ARG JBOSS_IMAGE=crs4/jboss_wildfly:10.0.0.Final
 
-FROM ${JBOSS_IMAGE}
+FROM crs4/jboss_wildfly:10.0.0.Final
 ## following ARGs need to be placed after FROM
 ARG DBNODE
 ARG I2B2NODE
