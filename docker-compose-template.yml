@@ -53,7 +53,7 @@ services:
   §§INSTANCE-i2b2-www:
     container_name: §§INSTANCE-i2b2-www
     ports:
-      - "§§PORT:80"
+      - "§§EPORT:80"
     build:
        context: ./i2b2www
        dockerfile: Dockerfile
